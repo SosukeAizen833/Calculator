@@ -1,0 +1,35 @@
+body{
+    display:flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: gray;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: gray;
+    width: 200px;
+    gap:5px
+    
+}
+.displayer{
+    border-radius: 5px;
+    background-color: white;
+    height:35px;
+    width: 200px;
+}
+.btn{
+   
+    color: rgb(197, 129, 50);
+    flex: 1;
+}
