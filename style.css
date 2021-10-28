@@ -1,6 +1,7 @@
 body{
     display:flex;
     justify-content: center;
+    align-items: center;
 }
 
 .container{
@@ -10,7 +11,7 @@ body{
     gap: 5px;
     background-color: gray;
     padding: 20px;
-    width: 200px;
+    width: 400px;
     border-radius: 10px;
 }
 
@@ -18,18 +19,20 @@ body{
     display: flex;
     justify-content: space-evenly;
     background-color: gray;
-    width: 200px;
+    width: 400px;
+    height: 50px;
     gap:5px
     
 }
 .displayer{
     border-radius: 5px;
+    color: black;
     background-color: white;
-    height:35px;
-    width: 200px;
+    text-align: end;
+    height:55px;
+    width: 400px;
 }
 .btn{
-   
     color: rgb(197, 129, 50);
     flex: 1;
 }
