@@ -1,20 +1,19 @@
 const body = document.querySelector('body');
 const displayer = document.querySelector('.displayer')
-let first_num;
-let second_num;
+let cur = 0
+let first_num=0
+let second_num=0;
 let operator;
 function display_num(num){  
-    displayer.textContent = displayer.textContent+`${num}`
+    cur = cur*10+parseFloat(num)
+    displayer.textContent = cur
 }
 
 function calculate(){
-    second_num = displayer.textContent;
-    second_num = parseFloat(second_num);
     let result = operate(first_num,second_num,operator);
-    operator = undefined
-    displayer.textContent=''
     first_num = result;
-    display_num(result);
+    second_num = 0;
+    displayer.textContent = result
 }
 
 
@@ -24,8 +23,8 @@ console.log(num_btns.length)
 
 for(let i=0;i<num_btns.length;i++){
     num_btns[i].addEventListener('click',()=>{
-        display_num(num_btns[i].innerHTML)
-        console.log(num_btns[i].innerHTML)
+        display_num(num_btns[i].textContent)
+        console.log(num_btns[i].textContent)
         
     })
 }
@@ -33,11 +32,12 @@ for(let i=0;i<num_btns.length;i++){
 let op_btns = document.querySelectorAll('.op-btn');
 for(let i=0;i<op_btns.length;i++){
     op_btns[i].addEventListener('click',()=>{
-        first_num = displayer.textContent;
-        console.log(first_num)
-        operator = op_btns[i].textContent;
-        console.log(operator)
-        displayer.textContent=""
+        first_num = parseFloat(first_num)+parseFloat(second_num);
+        second_num = 0;
+        cur = second_num
+        displayer.textContent = first_num
+        operator = op[i].textContent
+
     })
 }
 
@@ -50,13 +50,13 @@ function get_first(){
 }
 
 const add = (num1,num2) =>{
-    return parseInt(num1)+parseInt(num2)
+    return parseFloat(num1)+parseFloat(num2)
 }
 const subtract = (num1,num2) =>{
-    return num1-num2
+    return parseFloat(num1)-num2
 }
 const multiply = (num1,num2) =>{
-    return num1*num2
+    return parseFloat(num1)*parseFloat(num2)
 }
 const divide= (num1,num2) =>{
     return parseFloat(num1)/parseFloat(num2)
